@@ -1,25 +1,30 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;//we can check this and find this path through Controller spacename
-
-Route::get('/home', function () {
-    return view('home');
-});
+use App\Http\Controllers\UserController;
 
 
-// Route::view('/home','home'); here is a short method to open with routes
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 
-Route::get('/about/{name}', function($name) {
-    // echo $name;
-    return view('about', ['name'=>$name]);
-});
+ 
+
+// Route::view('/control','control');
+// // Route::view('/userabout','userabout');
+// Route::get('/userabout/{name}', function($name){
+//     return view('userabout',['user'=>$name]);
+// });
+// Route::view('/login','admin.login');
 
 
-// Route::redirect('/about','/');the redirect method
-Route::get('user',[UserController::class,'getUser']); 
-Route::get('user/{name}',[UserController::class,'getUserData']); 
+// Route::get('about_user',[ UserController::class,'userAbout']);
+// // Route::get('user_control/{name}',[ UserController::class,'userControl']);
 
+// Route::get('adminlogin',[UserController::class,'adminLogin']);
+
+
+Route::get('blades' ,[UserController::class,'userBlades']);
 
 
