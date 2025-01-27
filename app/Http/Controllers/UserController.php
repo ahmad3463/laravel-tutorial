@@ -21,10 +21,13 @@ class UserController extends Controller
     //     }
     // }
 
-        function userBlades(){
-            $name = "Ahmad Khan";
-            $user = ['ahmad','ali','khan','laravel'];
-            return view('blades',['name' => $name , 'user' => $user]);
+        // function userBlades(){
+        //     $name = "Ahmad Khan";
+        //     $user = ['ahmad','ali','khan','laravel'];
+        //     return view('blades',['name' => $name , 'user' => $user]);
+        // }
+        function userHome(){
+            return view('home');
         }
 
 }

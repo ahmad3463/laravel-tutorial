@@ -11,7 +11,7 @@ use App\Http\Controllers\UserController;
 
  
 
-// Route::view('/control','control');
+Route::view('/control','control');
 // // Route::view('/userabout','userabout');
 // Route::get('/userabout/{name}', function($name){
 //     return view('userabout',['user'=>$name]);
@@ -26,5 +26,6 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('blades' ,[UserController::class,'userBlades']);
+Route::get('home' ,[UserController::class,'userHome']);
 
 
