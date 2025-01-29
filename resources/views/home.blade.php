@@ -1,17 +1,40 @@
+<h1>user form</h1>
 
-
-<x-message-banner msg="user login successfully"/>
-<h1>Home page</h1>
-
+<form action="addUser" method="post">
+    @csrf
+    <div class="input-wrapper">
+        <input type="text" placeholder="enter your name" name="username">
+    </div>
+    <div class="input-wrapper">
+        <input type="email" placeholder="enter your email" name="useremail">
+    </div>
+    <div class="input-wrapper">
+        <input type="text" placeholder="enter your city" name="usercity">
+    </div>
+    <div class="input-wrapper">
+        <button>Submit</button>
+    </div>
+</form>
 
 <style>
-    .success{
-        display: inline-block;
+    input {
+        padding: 5px;
+        color: #e1af5f;
+        border-radius: 5px;
+        width:200px;
+        height:40px;
+        border: 1px solid #ff7043;
+    }
+    .input-wrapper{
         margin: 10px;
-        color: green;
-        background-color: #90ee909c;
-        border-radius:10px;
-        padding:8px 10px;
+    }
+
+    button {
+        padding: 5px;
+        color: #e1af5f;
+        border-radius: 5px;
+        width:200px;
+        height:40px;
+        border: 1px solid #ff7043;
     }
 </style>
-
