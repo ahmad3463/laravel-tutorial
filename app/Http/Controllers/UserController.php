@@ -7,15 +7,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-   function addUser(Request $req){
-
-    echo "user name is : $req->username";
-    echo "<br>";    
-    echo "user email is : $req->useremail";    
-    echo "<br>";    
-    echo "user city is : $req->usercity";
-
+   function userData(Request $userdata){
+      return $userdata;
    }
-   
 
 }

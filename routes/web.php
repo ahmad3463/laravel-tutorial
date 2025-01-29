@@ -4,11 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 
-// Route::get('home', [UserController::class,'userHome']);
+Route::view('/userhome','home');
 
-Route::view('/home','home');
-route::post('addUser',[UserController::class,'addUser']);
-
+Route::post('user-form', [UserController::class,'userData']);
 
 
 
