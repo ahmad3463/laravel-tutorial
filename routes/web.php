@@ -4,10 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 
-Route::view('/userhome','home');
+Route::view('/home','home');
 
-Route::post('user-form', [UserController::class,'userData']);
-
-
+Route::post('form-data',[UserController::class,'userData']);
 
 

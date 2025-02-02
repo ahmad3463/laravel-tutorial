@@ -1,34 +1,65 @@
-<h1>user form</h1>
+<h1>User Data</h1>
+    <!-- {{print_r($errors)}} -->
 
-<form action="user-form" method="post">
-@csrf
-<h4>user skill</h4>
+    <!-- @if($errors->any())
+    @foreach($errors->all() as $error)
+    <div style="color: red;">
+        {{$error}}
+    </div>
+    @endforeach
+    @endif -->
+<!-- <form action="form-data" method="post">
+    @csrf
 
-<input type="checkbox" name="skill[]" value="PHP" id="php">
-<label for="php">PHP</label>
-<input type="checkbox" name="skill[]" value="JS" id="js">
-<label for="js">Javascirpt</label>
-<input type="checkbox" name="skill[]" value="Node" id="node">
-<label for="node">Node</label>
+    <div class="input-wrapper">
+        <input type="text" name="username" placeholder="enter your name" value="{{old('username')}}" class="{{$errors->first('username')?'input-error':''}}">
+        <span style="color: red;">@error('username'){{$message}}@enderror</span>
+    </div>
+    <div class="input-wrapper">
+        <input type="email" name="useremail" placeholder="enter your email" value="{{old('useremail')}}" class="{{$errors->first('useremail')?'input-error':''}}">
+        <span style="color: red;">@error('useremail'){{$message}}@enderror</span>
 
-
-<div>
-    <h5>Gender</h5>
-    <input type="radio" name="gender" value="male" id="male">
-    <label for="male">Male</label>
-    <input type="radio" name="gender" value="female" id="female">
-    <label for="female">Female</label>
-</div>
+    </div>
+    <div class="input-wrapper">
+        <input type="text" name="usercity" placeholder="enter your city" value="{{old('usercity')}}" class="{{$errors->first('usercity')?'input-error':''}}">
+        <span style="color: red;">@error('usercity'){{$message}}@enderror</span>
+    </div>
 
     <div>
-        <h5>City</h5>
-
-        <select name="city" id="">
-            <option value="Peshawar">Peshawar</option>
-            <option value="Charsadda">Charsadda</option>
-            <option value="Mardan">Mardan</option>
-        </select>
+        <h4>Skills</h4>
+        <input type="checkbox" name="skills[]" id="php" value="PHP">
+        <label for="php">PHP</label>
+        <input type="checkbox" name="skills[]" id="Java" value="Java">
+        <label for="Java">Java</label>
+        <input type="checkbox" name="skills[]" id="Node" value="Node">
+        <label for="Node">Node</label><br><br>
+    <span style="color: red;">@error('skills'){{$message}}@enderror</span>
     </div>
-<br>
-    <button>submit form</button>
-</form>
+
+
+    <button class="input-wrapper">Submit Form</button>
+
+</form> -->
+
+
+<style>
+    input {
+        padding: 10px;
+        color: orange;
+        border: 1px solid orange;
+    }
+.input-wrapper{
+    margin-top: 10px;
+}
+    button {
+        padding: 10px;
+        color: orange;
+        border: 1px solid orange;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .input-error{
+        border: 1px solid red;
+    }
+</style>
