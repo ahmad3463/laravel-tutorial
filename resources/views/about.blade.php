@@ -8,7 +8,7 @@
     </div>
     @endforeach
     @endif -->
-<!-- <form action="form-data" method="post">
+<form action="form-data" method="post">
     @csrf
 
     <div class="input-wrapper">
@@ -39,7 +39,7 @@
 
     <button class="input-wrapper">Submit Form</button>
 
-</form> -->
+</form>
 
 
 <style>

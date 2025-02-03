@@ -7,12 +7,20 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+   function userAbout(){
+         return view('about');
+   }
+
    function userData(Request  $req){
       $req->validate([
          'username'=>'required | min:3 |max:15',
          'useremail'=>'required | email',
-         'usercity'=>'required | min:4 | max:10',
+         'usercity'=>'required | uppercase',
          'skills'=>'required',
+      ],
+      [
+        'usercity.uppercase' => 'city should be in uppercase only' 
       ]);
       return $req;
    }
