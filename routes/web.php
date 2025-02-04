@@ -9,25 +9,10 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->middleware('check1');
 
 
-// Route::prefix('student')->group( function(){
-//     Route::view('/home','home');
-//     Route::get('/show',[HomeController::class,'show']);
-//     Route::get('/add',[HomeController::class,'hide']);
-// })
+Route::view('about' , 'about');
 
-
-
-
-Route::controller(HomeController::class)->group(function () {
-
-    Route::get('show',  'show');
-    Route::get('hide',  'hide');
-    Route::get('clear', 'clear');
-    Route::get('about/{name}','about');
-
-});
 
