@@ -37,7 +37,11 @@ Route::get('/', function () {
 
 
 Route::view('login','loginpage'); 
+Route::view('profile','profile'); 
+
+
 Route::post('user' , [LoginController::class,'login']);
+Route::get('logout' , [LoginController::class,'logout']);
 
 
 
