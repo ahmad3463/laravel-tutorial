@@ -17,12 +17,12 @@ class DataController extends Controller
 
         // $response = [$response];
 
-        $response = user::where('name', 'saif')->update(['password' => '4545']);
+        $response = user::where('name', 'saif')->delete();
 
         if($response){
-            return 'data updated';
+            return 'data deleted';
         }else{
-            return 'data not updated';
+            return 'data not deleted';
         }
 
 

@@ -5,9 +5,10 @@ use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\MyController;
 // use  App\Http\Controllers\StudentController;
-
 // use App\Http\Controllers\UserController;
 // use App\Http\Controllers\DataController;
+// use App\Http\Controllers\HttpController;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('home');
@@ -28,7 +29,20 @@ Route::get('/', function () {
 
 // Route::get('data' , [DataController::class,'Data']);
 
-Route::get('query' ,[DataController::class,'queries']);
+// Route::get('query' ,[DataController::class,'queries']);
+
+
+// Route::view('htrequest' , ('httprequest'));
+// Route::post('user', [HttpController::class,'login']);
+
+
+Route::view('login','loginpage'); 
+Route::post('user' , [LoginController::class,'login']);
+
+
+
+
+
 
 
 
