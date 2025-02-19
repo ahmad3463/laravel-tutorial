@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UserController;
 // use App\Http\Controllers\DataController;
 // use App\Http\Controllers\HttpController;
-use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\AddUserController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('home');
@@ -36,14 +38,22 @@ Route::get('/', function () {
 // Route::post('user', [HttpController::class,'login']);
 
 
-Route::view('login','loginpage'); 
-Route::view('profile','profile'); 
+// Route::view('login','loginpage'); 
+// Route::view('profile','profile'); 
 
 
-Route::post('user' , [LoginController::class,'login']);
-Route::get('logout' , [LoginController::class,'logout']);
+// Route::post('user' , [LoginController::class,'login']);
+// Route::get('logout' , [LoginController::class,'logout']);
+
+// Route::view('adduser' , 'adduser');
+
+// Route::post('user' , [AddUserController::class,'login']);
 
 
+Route::view('upload' , 'upload');
+
+
+Route::post('loaded',[UploadController::class,'upload']);
 
 
 
