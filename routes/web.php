@@ -50,10 +50,12 @@ Route::get('/', function () {
 // Route::post('user' , [AddUserController::class,'login']);
 
 
-Route::view('upload' , 'upload');
+// Route::view('upload' , 'upload');
 
 
-Route::post('loaded',[UploadController::class,'upload']);
+// Route::post('loaded',[UploadController::class,'upload']);
+
+Route::view('local' , 'localiszation');
 
 
 
