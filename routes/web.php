@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\HttpController;
 // use App\Http\Controllers\LoginController;
 // use App\Http\Controllers\AddUserController;
-use App\Http\Controllers\UploadController;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+// use App\Http\Controllers\UploadController;
+// use Illuminate\Support\Facades\App;
+// use Illuminate\Support\Facades\Session;
+// use App\Http\Controllers\AddUserController;
+use App\Http\Controllers\AddDataController;
+
+use function Pest\Laravel\post;
 
 Route::get('/', function () {
     return view('home');
@@ -66,11 +70,16 @@ Route::get('/', function () {
 
 
 
-Route::middleware('setLang')->group(function(){
-    Route::view('local' , 'localiszation');
+// Route::middleware('setLang')->group(function(){
+//     Route::view('local' , 'localiszation');
 
-    Route::get('setlang/{lang}', function($lang){
-        Session::put('langName', $lang);
-            return  redirect('local');
-    });
-});
+//     Route::get('setlang/{lang}', function($lang){
+//         Session::put('langName', $lang);
+//             return  redirect('local');
+//     });
+// });
+
+
+Route::view('student' , 'adddata');
+
+Route::post('student',[AddDataController::class,'student']);
