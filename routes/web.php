@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\LoginController;
 // use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\UploadController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('home');
@@ -55,12 +57,20 @@ Route::get('/', function () {
 
 // Route::post('loaded',[UploadController::class,'upload']);
 
-Route::view('local' , 'localiszation');
+
+// Route::get('local/{lang}',function($lang){
+//     App::setLocale($lang);
+//     return  view('localiszation');
+// });
 
 
 
 
+Route::middleware('setLang')->group(function(){
+    Route::view('local' , 'localiszation');
 
-
-
-
+    Route::get('setlang/{lang}', function($lang){
+        Session::put('langName', $lang);
+            return  redirect('local');
+    });
+});
