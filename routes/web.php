@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 // use Illuminate\Support\Facades\App;
 // use Illuminate\Support\Facades\Session;
 // use App\Http\Controllers\AddUserController;
-use App\Http\Controllers\AddDataController;
+// use App\Http\Controllers\AddDataController;
+use App\Http\Controllers\CollageController;
 
 use function Pest\Laravel\post;
 
@@ -80,6 +81,6 @@ Route::get('/', function () {
 // });
 
 
-Route::view('student' , 'adddata');
+Route::view('collage' , 'collage');
 
-Route::post('student',[AddDataController::class,'student']);
+Route::post('collage' , [CollageController::class,'collage']);

@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UniStudent extends Model
+class Collage extends Model
 {
-    protected $table = 'unistudents';
-
+    public $timestamps = false;
 }

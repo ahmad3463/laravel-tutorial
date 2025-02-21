@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UniStudent;
+use App\Models\Collage;
 
-class AddDataController extends Controller
+class CollageController extends Controller
 {
-    function student(Request $req){
-     $student = new UniStudent();
+    function collage(Request  $req){
+        $student = new Collage();
         $student->name=$req->name;
         $student->email=$req->email;
         $student->phone=$req->phone;
         $student->save();
 
         if($student){
-            return "student record has been added";
+            echo " student has been added";
         }else{
-            return "operation failed";
+            echo " operation failed";
         }
-
     }
 }
