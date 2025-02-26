@@ -84,3 +84,6 @@ Route::get('/', function () {
 Route::view('collage' , 'collage');
 
 Route::post('collage' , [CollageController::class,'collage']);
+
+Route::get('list' , [CollageController::class,'list']);
+Route::get('delete/{id}' , [CollageController::class,'delete']);

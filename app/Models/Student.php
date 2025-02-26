@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    protected $table = "college_students";
-    function dumFun(){
-        echo "this is dummy function";
-    }
+    // protected $table = "college_students";
+    // function dumFun(){
+    //     echo "this is dummy function";
+    // }
 }

@@ -2,9 +2,8 @@
 
 <h1>Studend Data</h1>
 
-<form action="" method="post">
+<form action="collage" method="post">
     @csrf
-
     <input type="text" name="name" placeholder="Enter Your Name">
     <br><br>
     <input type="text" name="email" placeholder="Enter Your email">
