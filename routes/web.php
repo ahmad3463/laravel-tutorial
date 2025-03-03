@@ -92,3 +92,5 @@ Route::get('delete/{id}' , [CollageController::class,'delete']);
 Route::get('edit/{id}' , [CollageController::class,'edit']);
 
 Route::put('edit-student/{id}',[CollageController::class,'editStudent']);
+
+Route::get('search' , [CollageController::class,'search']);

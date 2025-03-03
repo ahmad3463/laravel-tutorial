@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
+use function Pest\Laravel\get;
+
 class CollageController extends Controller
 {
     function collage(Request  $req){
@@ -23,8 +25,7 @@ class CollageController extends Controller
 
     function list(){
 
-         $studentData = Student::all();
-
+         $studentData = Student::paginate(5);
         return view('list_student', ['students' => $studentData]);
     }
 
@@ -53,5 +54,11 @@ class CollageController extends Controller
         } else{
             return "update operation failed";
         }
+    }
+
+
+    function search(Request $req){
+     $studentData = Student::where('name' , 'like',"%$req->search%")->get();
+     return view('list_student',['students' =>$studentData,'search'=>$req->search]);
     }
 }

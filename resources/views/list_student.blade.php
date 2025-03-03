@@ -1,6 +1,10 @@
 <div>
     <h1>Student List</h1>
 
+    <form action="search" method="get">
+        <input type="text" name="search" placeholder="Search the name" value="{{@$search}}">
+        <button>search</button>
+    </form>
 
     <table border="1">
         <tr>
@@ -24,4 +28,17 @@
         </tr>
         @endforeach
     </table>
+
+
+<a href="/collage">back</a><br><br>
+
+{{$students->links()}}
+
 </div>
+
+
+<style>
+    .w-5.h-5{
+        width: 15px;
+    }
+</style>
