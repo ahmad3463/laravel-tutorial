@@ -25,7 +25,7 @@ class CollageController extends Controller
 
     function list(){
 
-         $studentData = Student::paginate(5);
+         $studentData = Student::paginate(8);
         return view('list_student', ['students' => $studentData]);
     }
 
@@ -61,4 +61,14 @@ class CollageController extends Controller
      $studentData = Student::where('name' , 'like',"%$req->search%")->get();
      return view('list_student',['students' =>$studentData,'search'=>$req->search]);
     }
+
+  function  deleteMulti(Request $req){
+       $result = Student::destroy( $req->ids);
+    if($result){
+
+        return redirect('list');
+    }else{
+        return "Student Data not deleted";
+    }
+  }
 }

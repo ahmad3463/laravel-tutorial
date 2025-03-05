@@ -6,17 +6,22 @@
         <button>search</button>
     </form>
 
+    <form action="delete-multi" method="post">
+        @csrf
+        <button>Delete</button>
     <table border="1">
         <tr>
-            <td>NAME</td>
-            <td>EMAIL</td>
-            <td>PHONE</td>
-            <td>CREATED_DATE</td>
+            <td>Select</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>created_at</td>
             <td>Operation</td>
         </tr>
 
         @foreach($students as $student)
         <tr>
+            <td><input type="checkbox" name="ids[]" value="{{$student->id}}"></td>
             <td>{{$student->name}}</td>
             <td>{{$student->email}}</td>
             <td>{{$student->phone}}</td>
@@ -28,6 +33,7 @@
         </tr>
         @endforeach
     </table>
+    </form>
 
 
 <a href="/collage">back</a><br><br>
