@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 // use Illuminate\Support\Facades\Session;
 // use App\Http\Controllers\AddUserController;
 // use App\Http\Controllers\AddDataController;
-use App\Http\Controllers\CollageController;
+// use App\Http\Controllers\CollageController;
+use App\Http\Controllers\ImagesController;
 
 use function Pest\Laravel\post;
 
@@ -81,18 +82,22 @@ Route::get('/', function () {
 // });
 
 
-Route::view('collage' , 'collage');
+// Route::view('collage' , 'collage');
 
-Route::post('collage' , [CollageController::class,'collage']);
+// Route::post('collage' , [CollageController::class,'collage']);
 
-Route::get('list' , [CollageController::class,'list']);
+// Route::get('list' , [CollageController::class,'list']);
 
-Route::get('delete/{id}' , [CollageController::class,'delete']);
+// Route::get('delete/{id}' , [CollageController::class,'delete']);
 
-Route::get('edit/{id}' , [CollageController::class,'edit']);
+// Route::get('edit/{id}' , [CollageController::class,'edit']);
 
-Route::put('edit-student/{id}',[CollageController::class,'editStudent']);
+// Route::put('edit-student/{id}',[CollageController::class,'editStudent']);
 
-Route::get('search' , [CollageController::class,'search']);
+// Route::get('search' , [CollageController::class,'search']);
 
-Route::post('delete-multi' , [CollageController::class,'deleteMulti']);
+// Route::post('delete-multi' , [CollageController::class,'deleteMulti']);
+
+Route::view('upload' , 'imgupload');
+
+Route::post('upload' , [ImagesController::class,'upload']);
