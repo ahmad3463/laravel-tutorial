@@ -101,3 +101,4 @@ Route::get('/', function () {
 Route::view('upload' , 'imgupload');
 
 Route::post('upload' , [ImagesController::class,'upload']);
+Route::get('list' , [ImagesController::class,'list']);

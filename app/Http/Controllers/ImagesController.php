@@ -13,6 +13,15 @@ class ImagesController extends Controller
         $imgPath = $pathArray[1];
         $img = new Image();
         $img->path=$imgPath;
-        return $img->save();
+        if ($img->save()){
+            return redirect('list');
+        }else{
+            return 'img not found';
+        }
+    }
+
+    function list(){
+        $image = Image::all();
+        return view('imgdisplay',['imgData'=> $image]);
     }
 }

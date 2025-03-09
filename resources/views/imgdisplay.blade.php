@@ -1,3 +1,7 @@
 <div>
-    <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius -->
+    <h1>List of Images</h1>
+
+    @foreach($imgData as $img)
+    <img width="100px" src="{{url('storage/public/'.$img->path)}}" alt="">
+    @endforeach
 </div>
